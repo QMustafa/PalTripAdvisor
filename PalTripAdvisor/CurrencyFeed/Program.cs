@@ -10,6 +10,7 @@ namespace CurrencyFeed
     {
         static void Main(string[] args)
         {
+            // test
         }
     }
 }
