@@ -20,9 +20,12 @@ namespace DataLayer
         public string CityName { get; set; }
         public string CountryName { get; set; }
         public Nullable<int> Starts { get; set; }
+        public System.Guid CurrencyId { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public string ModifiedBy { get; set; }
         public Nullable<System.DateTime> ModifiedDate { get; set; }
+    
+        public virtual Currency Currency { get; set; }
     }
 }

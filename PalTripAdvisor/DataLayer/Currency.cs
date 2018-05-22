@@ -19,6 +19,7 @@ namespace DataLayer
         {
             this.CurrenciesExchanges = new HashSet<CurrenciesExchange>();
             this.CurrenciesExchanges1 = new HashSet<CurrenciesExchange>();
+            this.PointOfInterests = new HashSet<PointOfInterest>();
         }
     
         public System.Guid Id { get; set; }
@@ -29,5 +30,7 @@ namespace DataLayer
         public virtual ICollection<CurrenciesExchange> CurrenciesExchanges { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CurrenciesExchange> CurrenciesExchanges1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PointOfInterest> PointOfInterests { get; set; }
     }
 }
