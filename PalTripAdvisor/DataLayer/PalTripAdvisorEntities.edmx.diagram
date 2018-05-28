@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="a4c9cf5e81474a2a9379a9616fabc985" Name="Diagram1">
         <EntityTypeShape EntityType="PalTripAdvisorServicesModel.Currency" Width="1.5" PointX="0.75" PointY="3.625" />
-        <EntityTypeShape EntityType="PalTripAdvisorServicesModel.CurrenciesExchange" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="PalTripAdvisorServicesModel.CurrenciesExchanx" Width="1.5" PointX="3" PointY="5.25" />
         <EntityTypeShape EntityType="PalTripAdvisorServicesModel.PointOfInterest" Width="1.5" PointX="3" PointY="1.125" />
         <EntityTypeShape EntityType="PalTripAdvisorServicesModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" />
         <AssociationConnector Association="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies" />

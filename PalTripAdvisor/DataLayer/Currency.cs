@@ -17,19 +17,19 @@ namespace DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Currency()
         {
-            this.CurrenciesExchanges = new HashSet<CurrenciesExchange>();
-            this.CurrenciesExchanges1 = new HashSet<CurrenciesExchange>();
+            this.CurrenciesExchanges = new HashSet<CurrenciesExchanx>();
+            this.CurrenciesExchanges1 = new HashSet<CurrenciesExchanx>();
             this.PointOfInterests = new HashSet<PointOfInterest>();
         }
     
-        public System.Guid Id { get; set; }
+        public short Id { get; set; }
         public string Name { get; set; }
         public string Slug { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CurrenciesExchange> CurrenciesExchanges { get; set; }
+        public virtual ICollection<CurrenciesExchanx> CurrenciesExchanges { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CurrenciesExchange> CurrenciesExchanges1 { get; set; }
+        public virtual ICollection<CurrenciesExchanx> CurrenciesExchanges1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PointOfInterest> PointOfInterests { get; set; }
     }

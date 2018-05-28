@@ -12,11 +12,11 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class CurrenciesExchange
+    public partial class CurrenciesExchanx
     {
-        public System.Guid Id { get; set; }
-        public System.Guid OriginalCurrencyId { get; set; }
-        public System.Guid TargetCurrencyId { get; set; }
+        public short @int { get; set; }
+        public short OriginalCurrencyId { get; set; }
+        public short TargetCurrencyId { get; set; }
         public decimal Factor { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreatedDate { get; set; }

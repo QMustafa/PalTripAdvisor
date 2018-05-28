@@ -14,13 +14,13 @@ namespace DataLayer
     
     public partial class PointOfInterest
     {
-        public System.Guid Id { get; set; }
+        public short Id { get; set; }
         public string Name { get; set; }
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
         public string CityName { get; set; }
         public string CountryName { get; set; }
         public Nullable<int> Starts { get; set; }
-        public System.Guid CurrencyId { get; set; }
+        public short CurrencyId { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public string ModifiedBy { get; set; }

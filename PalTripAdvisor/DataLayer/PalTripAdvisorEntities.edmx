@@ -9,34 +9,34 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Slug" Type="varchar" MaxLength="3" Nullable="false" />
         </EntityType>
-        <EntityType Name="CurrenciesExchange">
+        <EntityType Name="CurrenciesExchanges">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="int" />
           </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="OriginalCurrencyId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="TargetCurrencyId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Factor" Type="numeric" Precision="6" Scale="3" Nullable="false" />
+          <Property Name="int" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OriginalCurrencyId" Type="smallint" Nullable="false" />
+          <Property Name="TargetCurrencyId" Type="smallint" Nullable="false" />
+          <Property Name="Factor" Type="decimal" Precision="6" Scale="3" Nullable="false" />
           <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
-        <EntityType Name="PointOfInterest">
+        <EntityType Name="PointOfInterests">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Image" Type="varbinary(max)" />
+          <Property Name="Image" Type="varchar(max)" />
           <Property Name="CityName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Starts" Type="int" />
-          <Property Name="CurrencyId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CurrencyId" Type="smallint" Nullable="false" />
           <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
@@ -54,56 +54,56 @@
         </EntityType>
         <Association Name="FK_CurrenciesExchange_Currencies">
           <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
-          <End Role="CurrenciesExchange" Type="Self.CurrenciesExchange" Multiplicity="*" />
+          <End Role="CurrenciesExchanges" Type="Self.CurrenciesExchanges" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currencies">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="CurrenciesExchange">
+            <Dependent Role="CurrenciesExchanges">
               <PropertyRef Name="OriginalCurrencyId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CurrenciesExchange_Currencies1">
           <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
-          <End Role="CurrenciesExchange" Type="Self.CurrenciesExchange" Multiplicity="*" />
+          <End Role="CurrenciesExchanges" Type="Self.CurrenciesExchanges" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currencies">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="CurrenciesExchange">
+            <Dependent Role="CurrenciesExchanges">
               <PropertyRef Name="TargetCurrencyId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PointOfInterest_Currencies">
           <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
-          <End Role="PointOfInterest" Type="Self.PointOfInterest" Multiplicity="*" />
+          <End Role="PointOfInterests" Type="Self.PointOfInterests" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currencies">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="PointOfInterest">
+            <Dependent Role="PointOfInterests">
               <PropertyRef Name="CurrencyId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="PalTripAdvisorServicesModelStoreContainer">
           <EntitySet Name="Currencies" EntityType="Self.Currencies" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CurrenciesExchange" EntityType="Self.CurrenciesExchange" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PointOfInterest" EntityType="Self.PointOfInterest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CurrenciesExchanges" EntityType="Self.CurrenciesExchanges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointOfInterests" EntityType="Self.PointOfInterests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CurrenciesExchange_Currencies" Association="Self.FK_CurrenciesExchange_Currencies">
             <End Role="Currencies" EntitySet="Currencies" />
-            <End Role="CurrenciesExchange" EntitySet="CurrenciesExchange" />
+            <End Role="CurrenciesExchanges" EntitySet="CurrenciesExchanges" />
           </AssociationSet>
           <AssociationSet Name="FK_CurrenciesExchange_Currencies1" Association="Self.FK_CurrenciesExchange_Currencies1">
             <End Role="Currencies" EntitySet="Currencies" />
-            <End Role="CurrenciesExchange" EntitySet="CurrenciesExchange" />
+            <End Role="CurrenciesExchanges" EntitySet="CurrenciesExchanges" />
           </AssociationSet>
           <AssociationSet Name="FK_PointOfInterest_Currencies" Association="Self.FK_PointOfInterest_Currencies">
             <End Role="Currencies" EntitySet="Currencies" />
-            <End Role="PointOfInterest" EntitySet="PointOfInterest" />
+            <End Role="PointOfInterests" EntitySet="PointOfInterests" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -112,16 +112,16 @@
       <Schema Namespace="PalTripAdvisorServicesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="PalTripAdvisorServicesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Currencies" EntityType="PalTripAdvisorServicesModel.Currency" />
-          <EntitySet Name="CurrenciesExchanges" EntityType="PalTripAdvisorServicesModel.CurrenciesExchange" />
+          <EntitySet Name="CurrenciesExchanges" EntityType="PalTripAdvisorServicesModel.CurrenciesExchanx" />
           <EntitySet Name="PointOfInterests" EntityType="PalTripAdvisorServicesModel.PointOfInterest" />
           <EntitySet Name="sysdiagrams" EntityType="PalTripAdvisorServicesModel.sysdiagram" />
           <AssociationSet Name="FK_CurrenciesExchange_Currencies" Association="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies">
             <End Role="Currency" EntitySet="Currencies" />
-            <End Role="CurrenciesExchange" EntitySet="CurrenciesExchanges" />
+            <End Role="CurrenciesExchanx" EntitySet="CurrenciesExchanges" />
           </AssociationSet>
           <AssociationSet Name="FK_CurrenciesExchange_Currencies1" Association="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies1">
             <End Role="Currency" EntitySet="Currencies" />
-            <End Role="CurrenciesExchange" EntitySet="CurrenciesExchanges" />
+            <End Role="CurrenciesExchanx" EntitySet="CurrenciesExchanges" />
           </AssociationSet>
           <AssociationSet Name="FK_PointOfInterest_Currencies" Association="PalTripAdvisorServicesModel.FK_PointOfInterest_Currencies">
             <End Role="Currency" EntitySet="Currencies" />
@@ -132,39 +132,39 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Slug" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="CurrenciesExchanges" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies" FromRole="Currency" ToRole="CurrenciesExchange" />
-          <NavigationProperty Name="CurrenciesExchanges1" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies1" FromRole="Currency" ToRole="CurrenciesExchange" />
+          <NavigationProperty Name="CurrenciesExchanges" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies" FromRole="Currency" ToRole="CurrenciesExchanx" />
+          <NavigationProperty Name="CurrenciesExchanges1" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies1" FromRole="Currency" ToRole="CurrenciesExchanx" />
           <NavigationProperty Name="PointOfInterests" Relationship="PalTripAdvisorServicesModel.FK_PointOfInterest_Currencies" FromRole="Currency" ToRole="PointOfInterest" />
         </EntityType>
-        <EntityType Name="CurrenciesExchange">
+        <EntityType Name="CurrenciesExchanx">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="int" />
           </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="OriginalCurrencyId" Type="Guid" Nullable="false" />
-          <Property Name="TargetCurrencyId" Type="Guid" Nullable="false" />
+          <Property Name="int" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OriginalCurrencyId" Type="Int16" Nullable="false" />
+          <Property Name="TargetCurrencyId" Type="Int16" Nullable="false" />
           <Property Name="Factor" Type="Decimal" Nullable="false" Precision="6" Scale="3" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Currency" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies" FromRole="CurrenciesExchange" ToRole="Currency" />
-          <NavigationProperty Name="Currency1" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies1" FromRole="CurrenciesExchange" ToRole="Currency" />
+          <NavigationProperty Name="Currency" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies" FromRole="CurrenciesExchanx" ToRole="Currency" />
+          <NavigationProperty Name="Currency1" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies1" FromRole="CurrenciesExchanx" ToRole="Currency" />
         </EntityType>
         <EntityType Name="PointOfInterest">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Starts" Type="Int32" />
-          <Property Name="CurrencyId" Type="Guid" Nullable="false" />
+          <Property Name="CurrencyId" Type="Int16" Nullable="false" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -183,24 +183,24 @@
         </EntityType>
         <Association Name="FK_CurrenciesExchange_Currencies">
           <End Type="PalTripAdvisorServicesModel.Currency" Role="Currency" Multiplicity="1" />
-          <End Type="PalTripAdvisorServicesModel.CurrenciesExchange" Role="CurrenciesExchange" Multiplicity="*" />
+          <End Type="PalTripAdvisorServicesModel.CurrenciesExchanx" Role="CurrenciesExchanx" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currency">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="CurrenciesExchange">
+            <Dependent Role="CurrenciesExchanx">
               <PropertyRef Name="OriginalCurrencyId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CurrenciesExchange_Currencies1">
           <End Type="PalTripAdvisorServicesModel.Currency" Role="Currency" Multiplicity="1" />
-          <End Type="PalTripAdvisorServicesModel.CurrenciesExchange" Role="CurrenciesExchange" Multiplicity="*" />
+          <End Type="PalTripAdvisorServicesModel.CurrenciesExchanx" Role="CurrenciesExchanx" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Currency">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="CurrenciesExchange">
+            <Dependent Role="CurrenciesExchanx">
               <PropertyRef Name="TargetCurrencyId" />
             </Dependent>
           </ReferentialConstraint>
@@ -217,12 +217,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PalTripAdvisorServicesModelStoreContainer" CdmEntityContainer="PalTripAdvisorServicesEntities">
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PalTripAdvisorServicesModelStoreContainer" CdmEntityContainer="PalTripAdvisorServicesEntities">
           <EntitySetMapping Name="Currencies">
             <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.Currency">
               <MappingFragment StoreEntitySet="Currencies">
@@ -233,8 +233,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CurrenciesExchanges">
-            <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.CurrenciesExchange">
-              <MappingFragment StoreEntitySet="CurrenciesExchange">
+            <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.CurrenciesExchanx">
+              <MappingFragment StoreEntitySet="CurrenciesExchanges">
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -242,13 +242,13 @@
                 <ScalarProperty Name="Factor" ColumnName="Factor" />
                 <ScalarProperty Name="TargetCurrencyId" ColumnName="TargetCurrencyId" />
                 <ScalarProperty Name="OriginalCurrencyId" ColumnName="OriginalCurrencyId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="int" ColumnName="int" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PointOfInterests">
             <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.PointOfInterest">
-              <MappingFragment StoreEntitySet="PointOfInterest">
+              <MappingFragment StoreEntitySet="PointOfInterests">
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -275,8 +275,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
         </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -290,7 +289,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
