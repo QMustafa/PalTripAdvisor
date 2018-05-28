@@ -52,29 +52,37 @@ namespace PalTripAdvisor
 
         public List<PointOfInterest> GetPOIByCity(string country, string city)
         {
-            using (PointOfInterestRepository repository = new PointOfInterestRepository())
+            try
             {
-                var data = repository.GetPOIByCity(country, city);
-                var temp = new List<PointOfInterest>();
-                foreach (var row in data)
+                using (PointOfInterestRepository repository = new PointOfInterestRepository())
                 {
-                    temp.Add(new PointOfInterest()
+                    var data = repository.GetPOIByCity(country, city);
+                    var temp = new List<PointOfInterest>();
+                    foreach (var row in data)
                     {
-                        CityName = row.CityName,
-                        CountryName = row.CountryName,
-                        CreatedBy = row.CreatedBy,
-                        CurrencyId = row.CurrencyId,
-                        CreatedDate = row.CreatedDate.ToShortDateString(),
-                        Id = row.Id,
-                        Image = row.Image,
-                        ModifiedBy = row.ModifiedBy,
-                        ModifiedDate = row.ModifiedDate?.ToShortDateString(),
-                        Name = row.Name,
-                        Starts = row.Starts
-                    });
+                        temp.Add(new PointOfInterest()
+                        {
+                            CityName = row.CityName,
+                            CountryName = row.CountryName,
+                            CreatedBy = row.CreatedBy,
+                            CurrencyId = row.CurrencyId,
+                            CreatedDate = row.CreatedDate.ToShortDateString(),
+                            Id = row.Id,
+                            Image = row.Image,
+                            ModifiedBy = row.ModifiedBy,
+                            ModifiedDate = row.ModifiedDate?.ToShortDateString(),
+                            Name = row.Name,
+                            Starts = row.Starts
+                        });
+                    }
+                    return temp;
                 }
-                return temp;
             }
+            catch(Exception ex)
+            {
+                return null;
+            }
+            
         }
     }
 }
