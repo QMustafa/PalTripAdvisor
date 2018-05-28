@@ -39,18 +39,16 @@ namespace PalTripAdvisor
         [DataMember]
         public string CountryName { get; set; }
         [DataMember]
-        public Nullable<int> Starts { get; set; }
+        public int? Starts { get; set; }
         [DataMember]
         public short CurrencyId { get; set; }
         [DataMember]
         public string CreatedBy { get; set; }
         [DataMember]
-        public System.DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; }
         [DataMember]
         public string ModifiedBy { get; set; }
         [DataMember]
-        public Nullable<System.DateTime> ModifiedDate { get; set; }
-        [DataMember]
-        public virtual Currency Currency { get; set; }
+        public string ModifiedDate { get; set; }
     }
 }

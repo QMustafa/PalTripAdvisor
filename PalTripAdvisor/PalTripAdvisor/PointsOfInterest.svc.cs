@@ -36,13 +36,12 @@ namespace PalTripAdvisor
                         CityName = row.CityName,
                         CountryName = row.CountryName,
                         CreatedBy = row.CreatedBy,
-                        Currency = row.Currency,
-                        CreatedDate = row.CreatedDate,
+                        CreatedDate = row.CreatedDate.ToShortDateString(),
                         CurrencyId = row.CurrencyId,
                         Id = row.Id,
                         Image = row.Image,
                         ModifiedBy = row.ModifiedBy,
-                        ModifiedDate = row.ModifiedDate,
+                        ModifiedDate = row.ModifiedDate?.ToShortDateString(),
                         Name = row.Name,
                         Starts = row.Starts
                     });
@@ -64,13 +63,12 @@ namespace PalTripAdvisor
                         CityName = row.CityName,
                         CountryName = row.CountryName,
                         CreatedBy = row.CreatedBy,
-                        Currency = row.Currency,
-                        CreatedDate = row.CreatedDate,
                         CurrencyId = row.CurrencyId,
+                        CreatedDate = row.CreatedDate.ToShortDateString(),
                         Id = row.Id,
                         Image = row.Image,
                         ModifiedBy = row.ModifiedBy,
-                        ModifiedDate = row.ModifiedDate,
+                        ModifiedDate = row.ModifiedDate?.ToShortDateString(),
                         Name = row.Name,
                         Starts = row.Starts
                     });
