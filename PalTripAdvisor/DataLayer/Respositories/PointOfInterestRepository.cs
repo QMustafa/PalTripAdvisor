@@ -12,32 +12,38 @@ namespace DataLayer.Respositories
         public string addRating(string id, string rating)
         {
 
-                int tempRating;
-                if (!int.TryParse(rating.Trim(), out tempRating))
-                {
-                    return "500, bad rating, please only use numbers.";
-                }
+            int tempRating;
+            if (!int.TryParse(rating.Trim(), out tempRating))
+            {
+                return "500, bad rating, please only use numbers.";
+            }
 
-                var point = db.PointOfInterests.FirstOrDefault(_ => _.Id.Equals(id.Trim()));
-                if (tempRating > 1 && tempRating < 5)
+            short tempId;
+            if (!short.TryParse(id.Trim(), out tempId))
+            {
+                return "500, bad id, please only use numbers.";
+            }
+
+            var point = db.PointOfInterests.FirstOrDefault(_ => _.Id.Equals(tempId));
+            if (tempRating > 1 && tempRating < 5)
+            {
+                if (point != null)
                 {
-                    if (point != null)
-                    {
-                        point.Starts += tempRating;
-                        db.SaveChanges();
-                        return "200, your rating has been submitted successfully, Thank you!";
-                    }
-                    else
-                    {
-                        return "404, this point of interest does not exist, please add correct id.";
-                    }
+                    point.Starts += tempRating;
+                    db.SaveChanges();
+                    return "200, your rating has been submitted successfully, Thank you!";
                 }
                 else
                 {
-                    return "Wrong rating, please choose a number between 1 to 5";
-                
+                    return "404, this point of interest does not exist, please add correct id.";
+                }
             }
-            
+            else
+            {
+                return "Wrong rating, please choose a number between 1 to 5";
+
+            }
+
         }
 
 
