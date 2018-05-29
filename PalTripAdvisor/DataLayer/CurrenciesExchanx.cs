@@ -14,7 +14,7 @@ namespace DataLayer
     
     public partial class CurrenciesExchanx
     {
-        public short @int { get; set; }
+        public short id { get; set; }
         public short OriginalCurrencyId { get; set; }
         public short TargetCurrencyId { get; set; }
         public decimal Factor { get; set; }

@@ -20,7 +20,7 @@ namespace CurrencyFeed
                 IScheduler scheduler = await StdSchedulerFactory.GetDefaultScheduler();
 
                 // and start it off
-                scheduler.Start();
+                await scheduler.Start();
 
                 // define the job and tie it to our HelloJob class
                 IJobDetail job = JobBuilder.Create<CurrencyJob>()
@@ -32,18 +32,18 @@ namespace CurrencyFeed
                     .WithIdentity("trigger1", "group1")
                     .StartNow()
                     .WithSimpleSchedule(x => x
-                        .WithIntervalInHours(8)
+                        .WithIntervalInSeconds(60)
                         .RepeatForever())
                     .Build();
 
                 // Tell quartz to schedule the job using our trigger
-                scheduler.ScheduleJob(job, trigger);
+                await scheduler.ScheduleJob(job, trigger);
 
                 // some sleep to show what's happening
                 Thread.Sleep(TimeSpan.FromSeconds(60));
 
                 // and last shut down the scheduler when you are ready to close your program
-                scheduler.Shutdown();
+                await scheduler.Shutdown();
             }
             catch (SchedulerException se)
             {

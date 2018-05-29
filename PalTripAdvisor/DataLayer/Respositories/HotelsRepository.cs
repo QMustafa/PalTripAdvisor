@@ -71,7 +71,6 @@ namespace DataLayer.Respositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
         }
     }
 

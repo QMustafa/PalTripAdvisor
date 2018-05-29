@@ -15,9 +15,9 @@
         </EntityType>
         <EntityType Name="CurrenciesExchanges">
           <Key>
-            <PropertyRef Name="int" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="int" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OriginalCurrencyId" Type="smallint" Nullable="false" />
           <Property Name="TargetCurrencyId" Type="smallint" Nullable="false" />
           <Property Name="Factor" Type="decimal" Precision="6" Scale="3" Nullable="false" />
@@ -160,9 +160,9 @@
         </EntityType>
         <EntityType Name="CurrenciesExchanx">
           <Key>
-            <PropertyRef Name="int" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="int" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OriginalCurrencyId" Type="Int16" Nullable="false" />
           <Property Name="TargetCurrencyId" Type="Int16" Nullable="false" />
           <Property Name="Factor" Type="Decimal" Nullable="false" Precision="6" Scale="3" />
@@ -278,7 +278,7 @@
                 <ScalarProperty Name="Factor" ColumnName="Factor" />
                 <ScalarProperty Name="TargetCurrencyId" ColumnName="TargetCurrencyId" />
                 <ScalarProperty Name="OriginalCurrencyId" ColumnName="OriginalCurrencyId" />
-                <ScalarProperty Name="int" ColumnName="int" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

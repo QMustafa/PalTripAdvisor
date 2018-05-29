@@ -7,12 +7,17 @@ using PalTripAdvisor.Models;
 
 namespace DataLayer.Respositories
 {
-    public class CurrencyExchangeRepository
+    public class CurrencyExchangeRepository : IDisposable
     {
         private readonly PalTripAdvisorServicesEntities db;
         public CurrencyExchangeRepository()
         {
             db = new PalTripAdvisorServicesEntities();
+        }
+
+        public void Dispose()
+        {
+            
         }
 
         public CurrencyExchangeResponseModel ExvhangeCurrency(string from, string to)
@@ -39,6 +44,21 @@ namespace DataLayer.Respositories
 
             return new CurrencyExchangeResponseModel { Factor = tuple.Factor, MessageResponse = "200, factor exist." };
         }
-        
+
+        public async Task SaveCurrencyExchange(List<CurrenciesExchanx> currenciesFactor)
+        {
+            foreach(var item in currenciesFactor)
+            {
+                db.CurrenciesExchanges.Add(item);
+                await db.SaveChangesAsync();
+            }
+        }
+
+        public List<Currency> getAllCurrencies()
+        {
+            
+            var data = db.Currencies.ToList<Currency>();
+            return data;
+        }
     }
 }
