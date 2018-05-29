@@ -56,6 +56,9 @@
     <Compile Include="Currency.cs">
       <DependentUpon>PalTripAdvisorEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Hotel.cs">
+      <DependentUpon>PalTripAdvisorEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CurrencyExchangeResponseModel.cs" />
     <Compile Include="PalTripAdvisorEntities.Context.cs">
       <AutoGen>True</AutoGen>
@@ -77,6 +80,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respositories\CurrencyExchangeRepository.cs" />
+    <Compile Include="Respositories\HotelsRepository.cs" />
     <Compile Include="Respositories\PointOfInterestRepository.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>PalTripAdvisorEntities.tt</DependentUpon>

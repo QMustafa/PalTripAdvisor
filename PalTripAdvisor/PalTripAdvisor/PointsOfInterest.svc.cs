@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.Text;
 using DataLayer;
 using DataLayer.Respositories;
+using SwaggerWcf.Attributes;
 
 namespace PalTripAdvisor
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "PointsOfInterest" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select PointsOfInterest.svc or PointsOfInterest.svc.cs at the Solution Explorer and start debugging.
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    [SwaggerWcf("/v1/rest")]
     public class PointsOfInterest : IPointsOfInterest
     {
         public string addRating(string id, string rating)
@@ -22,7 +27,11 @@ namespace PalTripAdvisor
                
         }
 
-
+        [SwaggerWcfTag("Books")]
+        [SwaggerWcfResponse(HttpStatusCode.Created, "Book created, value in the response body with id updated")]
+        [SwaggerWcfResponse(HttpStatusCode.BadRequest, "Bad request", true)]
+        [SwaggerWcfResponse(HttpStatusCode.InternalServerError,
+        "Internal error (can be forced using ERROR_500 as book title)", true)]
         public PointOfInterest GetPOIByCountry(string country)
         {
             using (PointOfInterestRepository repository = new PointOfInterestRepository())
@@ -35,6 +44,7 @@ namespace PalTripAdvisor
                     {
                         CityName = row.CityName,
                         CountryName = row.CountryName,
+                        ZipCode = row.ZipCode.ToString(),
                         CreatedBy = row.CreatedBy,
                         CreatedDate = row.CreatedDate.ToShortDateString(),
                         CurrencyId = row.CurrencyId,
@@ -66,6 +76,7 @@ namespace PalTripAdvisor
                         {
                             CityName = row.CityName,
                             CountryName = row.CountryName,
+                            ZipCode = row.ZipCode.ToString(),
                             CreatedBy = row.CreatedBy,
                             CurrencyId = row.CurrencyId,
                             CreatedDate = row.CreatedDate.ToShortDateString(),
@@ -111,6 +122,11 @@ namespace PalTripAdvisor
         public string getImage(GetPOIByCityResult model)
         {
             return model.data.Image;
+        }
+
+        public string getZipCode(GetPOIByCityResult model)
+        {
+            return model.data.ZipCode;
         }
     }
 }

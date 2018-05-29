@@ -1,6 +1,8 @@
 ﻿using DataLayer;
+using SwaggerWcf.Attributes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -13,6 +15,7 @@ namespace PalTripAdvisor
     [ServiceContract]
     public interface IPointsOfInterest
     {
+        [SwaggerWcfPath("Create book", "Create a book on the store")]
         [OperationContract]
         [WebGet(UriTemplate = "/GetPOIByCountry/{country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         PointOfInterest GetPOIByCountry(string country);
@@ -34,15 +37,20 @@ namespace PalTripAdvisor
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getImage", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getImage(GetPOIByCityResult model);
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getZipCode", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getZipCode(GetPOIByCityResult model);
 
 
 
     }
-
-    [DataContract]
+    [DataContract(Name = "book")]
+    [Description("Book with title, first publish date, author and language")]
+    [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
     public class GetPOIByCityResult
     {
         [DataMember(Name = "GetPOIByCityResult")]
+        [Description("Book ID")]
         public PointOfInterest data { set; get; }
     }
 
@@ -59,6 +67,8 @@ namespace PalTripAdvisor
         public string CityName { get; set; }
         [DataMember(Name = "CountryName")]
         public string CountryName { get; set; }
+        [DataMember(Name = "ZipCode")]
+        public string ZipCode { set; get; }
         [DataMember(Name = "Starts")]
         public int? Starts { get; set; }
         [DataMember(Name = "CurrencyId")]

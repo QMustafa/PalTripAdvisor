@@ -27,6 +27,7 @@ namespace DataLayer
     
         public virtual DbSet<Currency> Currencies { get; set; }
         public virtual DbSet<CurrenciesExchanx> CurrenciesExchanges { get; set; }
+        public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<PointOfInterest> PointOfInterests { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }

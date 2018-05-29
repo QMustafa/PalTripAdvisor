@@ -26,6 +26,22 @@
           <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
           <Property Name="ModifiedDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="Hotels">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CountyName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CityName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rating" Type="int" Nullable="false" />
+          <Property Name="Image" Type="varchar(max)" />
+          <Property Name="AveragePrice" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="PointOfInterests">
           <Key>
             <PropertyRef Name="Id" />
@@ -37,6 +53,7 @@
           <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Starts" Type="int" />
           <Property Name="CurrencyId" Type="smallint" Nullable="false" />
+          <Property Name="ZipCode" Type="int" Nullable="false" />
           <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
@@ -91,6 +108,7 @@
         <EntityContainer Name="PalTripAdvisorServicesModelStoreContainer">
           <EntitySet Name="Currencies" EntityType="Self.Currencies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CurrenciesExchanges" EntityType="Self.CurrenciesExchanges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hotels" EntityType="Self.Hotels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PointOfInterests" EntityType="Self.PointOfInterests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CurrenciesExchange_Currencies" Association="Self.FK_CurrenciesExchange_Currencies">
@@ -113,6 +131,7 @@
         <EntityContainer Name="PalTripAdvisorServicesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Currencies" EntityType="PalTripAdvisorServicesModel.Currency" />
           <EntitySet Name="CurrenciesExchanges" EntityType="PalTripAdvisorServicesModel.CurrenciesExchanx" />
+          <EntitySet Name="Hotels" EntityType="PalTripAdvisorServicesModel.Hotel" />
           <EntitySet Name="PointOfInterests" EntityType="PalTripAdvisorServicesModel.PointOfInterest" />
           <EntitySet Name="sysdiagrams" EntityType="PalTripAdvisorServicesModel.sysdiagram" />
           <AssociationSet Name="FK_CurrenciesExchange_Currencies" Association="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies">
@@ -154,6 +173,22 @@
           <NavigationProperty Name="Currency" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies" FromRole="CurrenciesExchanx" ToRole="Currency" />
           <NavigationProperty Name="Currency1" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies1" FromRole="CurrenciesExchanx" ToRole="Currency" />
         </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CountyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rating" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AveragePrice" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="PointOfInterest">
           <Key>
             <PropertyRef Name="Id" />
@@ -165,6 +200,7 @@
           <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Starts" Type="Int32" />
           <Property Name="CurrencyId" Type="Int16" Nullable="false" />
+          <Property Name="ZipCode" Type="Int32" Nullable="false" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -246,6 +282,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Hotels">
+            <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.Hotel">
+              <MappingFragment StoreEntitySet="Hotels">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AveragePrice" ColumnName="AveragePrice" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="CountyName" ColumnName="CountyName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PointOfInterests">
             <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.PointOfInterest">
               <MappingFragment StoreEntitySet="PointOfInterests">
@@ -253,6 +306,7 @@
                 <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
                 <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
                 <ScalarProperty Name="Starts" ColumnName="Starts" />
                 <ScalarProperty Name="CountryName" ColumnName="CountryName" />
