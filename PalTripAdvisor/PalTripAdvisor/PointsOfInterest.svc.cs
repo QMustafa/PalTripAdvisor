@@ -23,7 +23,7 @@ namespace PalTripAdvisor
         }
 
 
-        public List<PointOfInterest> GetPOIByCountry(string country)
+        public PointOfInterest GetPOIByCountry(string country)
         {
             using (PointOfInterestRepository repository = new PointOfInterestRepository())
             {
@@ -39,18 +39,20 @@ namespace PalTripAdvisor
                         CreatedDate = row.CreatedDate.ToShortDateString(),
                         CurrencyId = row.CurrencyId,
                         Id = row.Id,
-                        Image = row.Image,
+                        Image = @"http://ec2-54-71-170-54.us-west-2.compute.amazonaws.com/POIImages/" + row.Image,
                         ModifiedBy = row.ModifiedBy,
                         ModifiedDate = row.ModifiedDate?.ToShortDateString(),
                         Name = row.Name,
                         Starts = row.Starts
                     });
                 }
-                return temp;
+                Random rnd = new Random();
+                int r = rnd.Next(temp.Count);
+                return temp[r];
             }
         }
 
-        public List<PointOfInterest> GetPOIByCity(string country, string city)
+        public PointOfInterest GetPOIByCity(string country, string city)
         {
             try
             {
@@ -68,14 +70,16 @@ namespace PalTripAdvisor
                             CurrencyId = row.CurrencyId,
                             CreatedDate = row.CreatedDate.ToShortDateString(),
                             Id = row.Id,
-                            Image = row.Image,
+                            Image = @"http://ec2-54-71-170-54.us-west-2.compute.amazonaws.com/POIImages/" + row.Image,
                             ModifiedBy = row.ModifiedBy,
                             ModifiedDate = row.ModifiedDate?.ToShortDateString(),
                             Name = row.Name,
                             Starts = row.Starts
                         });
                     }
-                    return temp;
+                    Random rnd = new Random();
+                    int r = rnd.Next(temp.Count);
+                    return temp[r];
                 }
             }
             catch(Exception ex)
@@ -83,6 +87,30 @@ namespace PalTripAdvisor
                 return null;
             }
             
+        }
+
+        public string getCountry(GetPOIByCityResult model)
+        {
+            return model.data.CountryName;
+        }
+
+        public string getCity(GetPOIByCityResult model)
+        {
+            return model.data.CityName;
+        }
+
+        public string getCurrency(GetPOIByCityResult model)
+        {
+            using (PointOfInterestRepository repository = new PointOfInterestRepository())
+            {
+                var data = repository.getCurrencySlug(model.data.CurrencyId);
+                return data;
+            }
+        }
+
+        public string getImage(GetPOIByCityResult model)
+        {
+            return model.data.Image;
         }
     }
 }

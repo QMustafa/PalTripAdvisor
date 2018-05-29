@@ -15,40 +15,61 @@ namespace PalTripAdvisor
     {
         [OperationContract]
         [WebGet(UriTemplate = "/GetPOIByCountry/{country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
-        List<PointOfInterest> GetPOIByCountry(string country);
+        PointOfInterest GetPOIByCountry(string country);
         [OperationContract]
         [WebGet(UriTemplate = "/GetPOIByCity/{country}/{city}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
-        List<PointOfInterest> GetPOIByCity(string country, string city);
+        PointOfInterest GetPOIByCity(string country, string city);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/AddRating/{id}/{rating}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         string addRating(string id, string rating);
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getCountry", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getCountry(GetPOIByCityResult model);
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getCity", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getCity(GetPOIByCityResult model);
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getCurrency", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getCurrency(GetPOIByCityResult model);
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getImage", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getImage(GetPOIByCityResult model);
 
+
+
+    }
+
+    [DataContract]
+    public class GetPOIByCityResult
+    {
+        [DataMember(Name = "GetPOIByCityResult")]
+        public PointOfInterest data { set; get; }
     }
 
     [DataContract]
     public class PointOfInterest
     {
-        [DataMember]
+        [DataMember(Name = "Id")]
         public short Id { get; set; }
-        [DataMember]
+        [DataMember(Name = "Name")]
         public string Name { get; set; }
-        [DataMember]
+        [DataMember(Name = "Image")]
         public string Image { get; set; }
-        [DataMember]
+        [DataMember(Name = "CityName")]
         public string CityName { get; set; }
-        [DataMember]
+        [DataMember(Name = "CountryName")]
         public string CountryName { get; set; }
-        [DataMember]
+        [DataMember(Name = "Starts")]
         public int? Starts { get; set; }
-        [DataMember]
+        [DataMember(Name = "CurrencyId")]
         public short CurrencyId { get; set; }
-        [DataMember]
+        [DataMember(Name = "CreatedBy")]
         public string CreatedBy { get; set; }
-        [DataMember]
+        [DataMember(Name = "CreatedDate")]
         public string CreatedDate { get; set; }
-        [DataMember]
+        [DataMember(Name = "ModifiedBy")]
         public string ModifiedBy { get; set; }
-        [DataMember]
+        [DataMember(Name = "ModifiedDate")]
         public string ModifiedDate { get; set; }
     }
 }

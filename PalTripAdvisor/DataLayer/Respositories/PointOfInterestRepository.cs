@@ -66,5 +66,14 @@ namespace DataLayer.Respositories
         public void Dispose()
         {
         }
+
+        public string getCurrencySlug(int id)
+        {
+            Currency currency = db.Currencies.Where(_ => _.Id == id).FirstOrDefault();
+            if (currency != null)
+                return currency.Slug;
+            else
+                return "404, currency id not found";
+        }
     }
 }

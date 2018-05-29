@@ -20,7 +20,7 @@ namespace PalTripAdvisor
             this.repository = new CurrencyExchangeRepository();
         }
 
-        public CurrencyExchangeResponseModel ExvhangeCurrency(string from, string to)
+        public CurrencyExchangeResponseModel ExchangeCurrency(string from, string to)
         {
             var temp = repository.ExvhangeCurrency(from, to);
             return new CurrencyExchangeResponseModel { Factor = temp.Factor, MessageResponse = temp.MessageResponse};
