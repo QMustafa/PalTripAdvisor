@@ -122,7 +122,7 @@ namespace PalTripAdvisor
             return model.data.CityName;
         }
 
-        public string getCurrency(GetPOIByCityResult model)
+        public string getCurrency(GetPOIByCurrencyResult model)
         {
             using (PointOfInterestRepository repository = new PointOfInterestRepository())
             {
@@ -131,12 +131,12 @@ namespace PalTripAdvisor
             }
         }
 
-        public string getImage(GetPOIByCityResult model)
+        public string getImage(GetPOIByImageResult model)
         {
             return model.data.Image;
         }
 
-        public string getZipCode(GetPOIByCityResult model)
+        public string getZipCode(GetPOIByZipCodeResult model)
         {
             return model.data.ZipCode;
         }

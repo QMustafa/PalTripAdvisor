@@ -33,17 +33,51 @@ namespace PalTripAdvisor
         string getCity(GetPOIByCityResult model);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getCurrency", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getCurrency(GetPOIByCityResult model);
+        string getCurrency(GetPOIByCurrencyResult model);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getImage", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getImage(GetPOIByCityResult model);
+        string getImage(GetPOIByImageResult model);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getZipCode", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getZipCode(GetPOIByCityResult model);
+        string getZipCode(GetPOIByZipCodeResult model);
 
 
 
     }
+
+
+    [DataContract(Name = "book")]
+    [Description("Book with title, first publish date, author and language")]
+    [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
+    public class GetPOIByImageResult
+    {
+        [DataMember(Name = "GetPOIByCurrencyResult")]
+        [Description("Book ID")]
+        public PointOfInterest data { set; get; }
+    }
+
+
+    [DataContract(Name = "book")]
+    [Description("Book with title, first publish date, author and language")]
+    [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
+    public class GetPOIByCurrencyResult
+    {
+        [DataMember(Name = "GetPOIByCurrencyResult")]
+        [Description("Book ID")]
+        public PointOfInterest data { set; get; }
+    }
+
+    [DataContract(Name = "book")]
+    [Description("Book with title, first publish date, author and language")]
+    [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
+    public class GetPOIByZipCodeResult
+    {
+        [DataMember(Name = "GetPOIByZipCodeResult")]
+        [Description("Book ID")]
+        public PointOfInterest data { set; get; }
+    }
+
+
     [DataContract(Name = "book")]
     [Description("Book with title, first publish date, author and language")]
     [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
