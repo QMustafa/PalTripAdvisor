@@ -33,7 +33,10 @@ namespace PalTripAdvisor
         string getCity(GetPOIByCityResult model);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getCurrency", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getCurrency(GetPOIByCurrencyResult model);
+        string getCurrency(GetPOIByCityResult model);
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getCurrency2", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getCurrency2(GetPOIByCountryResult model);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getImage", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getImage(GetPOIByImageResult model);

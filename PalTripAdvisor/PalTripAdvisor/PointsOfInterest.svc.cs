@@ -122,7 +122,16 @@ namespace PalTripAdvisor
             return model.data.CityName;
         }
 
-        public string getCurrency(GetPOIByCurrencyResult model)
+        public string getCurrency(GetPOIByCityResult model)
+        {
+            using (PointOfInterestRepository repository = new PointOfInterestRepository())
+            {
+                var data = repository.getCurrencySlug(model.data.CurrencyId);
+                return data;
+            }
+        }
+
+        public string getCurrency2(GetPOIByCountryResult model)
         {
             using (PointOfInterestRepository repository = new PointOfInterestRepository())
             {
