@@ -27,7 +27,7 @@ namespace PalTripAdvisor
         string addRating(string id, string rating);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getCountry", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getCountry(GetPOIByCityResult model);
+        string getCountry(GetPOIByCountryResult model);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getCity", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getCity(GetPOIByCityResult model);
@@ -44,6 +44,16 @@ namespace PalTripAdvisor
 
 
     }
+    [DataContract(Name = "book")]
+    [Description("Book with title, first publish date, author and language")]
+    [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
+    public class GetPOIByCountryResult
+    {
+        [DataMember(Name = "GetPOIByCountryResult")]
+        [Description("Book ID")]
+        public PointOfInterest data { set; get; }
+    }
+
     [DataContract(Name = "book")]
     [Description("Book with title, first publish date, author and language")]
     [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]

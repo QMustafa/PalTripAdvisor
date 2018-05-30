@@ -12,10 +12,22 @@ using SwaggerWcf.Attributes;
 
 namespace PalTripAdvisor
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "PointsOfInterest" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select PointsOfInterest.svc or PointsOfInterest.svc.cs at the Solution Explorer and start debugging.
-    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    [SwaggerWcf("/v1/rest")]
+    [SwaggerWcf("/v2/rest")]
+    [SwaggerWcfServiceInfo(
+        title: "SampleService",
+        version: "0.0.1",
+        Description = "Sample Service to test SwaggerWCF",
+        TermsOfService = "Terms of Service"
+    )]
+    [SwaggerWcfContactInfo(
+        Name = "Abel Silva",
+        Url = "http://github.com/abelsilva",
+        Email = "no@e.mail"
+    )]
+    [SwaggerWcfLicenseInfo(
+        name: "Apache License 2.0",
+        Url = "https://github.com/abelsilva/SwaggerWCF/blob/master/LICENSE"
+    )]
     public class PointsOfInterest : IPointsOfInterest
     {
         public string addRating(string id, string rating)
@@ -100,7 +112,7 @@ namespace PalTripAdvisor
             
         }
 
-        public string getCountry(GetPOIByCityResult model)
+        public string getCountry(GetPOIByCountryResult model)
         {
             return model.data.CountryName;
         }
