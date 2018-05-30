@@ -145,7 +145,7 @@ namespace PalTripAdvisor
             return model.data.Image;
         }
 
-        public string getZipCode(GetPOIByZipCodeResult model)
+        public string getZipCode(GetPOIByCityResult model)
         {
             return model.data.ZipCode;
         }

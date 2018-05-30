@@ -42,7 +42,7 @@ namespace PalTripAdvisor
         string getImage(GetPOIByImageResult model);
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/getZipCode", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getZipCode(GetPOIByZipCodeResult model);
+        string getZipCode(GetPOIByCityResult model);
 
 
 
