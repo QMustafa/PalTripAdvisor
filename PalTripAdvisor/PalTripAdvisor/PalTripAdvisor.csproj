@@ -118,8 +118,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    
     <Content Include="App_Start\Global.asax" />
-    <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="CurrencyExchange.svc" />
     <Content Include="GetClosestHotels.svc" />
     <Content Include="PointsOfInterest.svc" />
