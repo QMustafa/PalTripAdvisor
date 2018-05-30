@@ -60,5 +60,11 @@ namespace DataLayer.Respositories
             var data = db.Currencies.ToList<Currency>();
             return data;
         }
+
+        public short getIdBySlug(string source)
+        {
+            var data = db.Currencies.FirstOrDefault(_ => _.Slug.Contains(source));
+            return data.Id;
+        }
     }
 }

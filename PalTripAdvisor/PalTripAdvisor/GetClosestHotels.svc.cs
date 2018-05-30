@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace PalTripAdvisor
@@ -12,6 +13,10 @@ namespace PalTripAdvisor
     // NOTE: In order to launch WCF Test Client for testing this service, please select GetClosestHotels.svc or GetClosestHotels.svc.cs at the Solution Explorer and start debugging.
     public class GetClosestHotels : IGetClosestHotels
     {
+        public GetClosestHotels()
+        {
+            
+        }
         public string addRating(string id, string rating)
         {
             using (HotelsRepository repository = new HotelsRepository())

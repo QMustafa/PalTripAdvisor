@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CurrencyFeed
@@ -56,7 +57,7 @@ namespace CurrencyFeed
                 CurrencyLayerResponse responseModel = bindJsonToModel(result);
                 List<CurrenciesExchanx> dataToSave = mapResponseToEntity(responseModel);
 
-                return new List<CurrenciesExchanx>();
+                return dataToSave;
             }
             catch(Exception ex)
             {
@@ -68,16 +69,21 @@ namespace CurrencyFeed
 
         private List<CurrenciesExchanx> mapResponseToEntity(CurrencyLayerResponse responseModel)
         {
-            if (responseModel.Success)
+            using (CurrencyExchangeRepository repository = new CurrencyExchangeRepository())
             {
                 List<CurrenciesExchanx> models = new List<CurrenciesExchanx>();
-                foreach (var item in responseModel.Quotes)
+                if (responseModel.Success)
                 {
-                    //models.Add(new CurrenciesExchanx {  })
+                    
+                    foreach (var item in responseModel.Quotes)
+                    {
+                        string currensySlug = item.Description.Replace(responseModel.Source, "");
+                        models.Add(new CurrenciesExchanx { CreatedBy = "CurrencyFeedJob", CreatedDate = DateTime.Now, ModifiedBy = "CurrencyFeedJob", ModifiedDate = DateTime.Now, OriginalCurrencyId = repository.getIdBySlug(responseModel.Source), TargetCurrencyId = repository.getIdBySlug(currensySlug), Factor = item.Factor });
+                    }
                 }
-                return new List<CurrenciesExchanx>();
+                return models;
             }
-                return null;
+
         }
 
         private CurrencyLayerResponse bindJsonToModel(string result)
@@ -94,7 +100,9 @@ namespace CurrencyFeed
             {
                 var splitted = item.Split(':');
                 string desc = splitted[0].ToString();
-                decimal fact = Convert.ToDecimal(splitted[1].ToString().Trim());
+                string num = splitted[1].ToString();
+                var doubleArray = (Regex.Split(num, @"[^0-9\.]+").Where(c => c != "." && c.Trim() != "")).ToList<string>();
+                decimal fact = Convert.ToDecimal(doubleArray[0]);
                 var letters = new String(desc.Where(c => Char.IsLetter(c)).ToArray());
                 var factor = new CurrenciesFactors { Description = letters, Factor = fact};
                 factors.Add(factor);

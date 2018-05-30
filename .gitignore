@@ -328,3 +328,4 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/PalTripAdvisor/ConsoleApp1/ConsoleApp1.csproj

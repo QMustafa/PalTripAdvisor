@@ -14,6 +14,7 @@ namespace PalTripAdvisor
     public interface ICurrencyExchange
     {
         [OperationContract]
-        CurrencyExchangeResponseModel ExchangeCurrency(string from, string to);
+        [WebInvoke(UriTemplate = "ExchangeCurrency/{from}/{to}")]
+        CurrencyExchangeResponseDomainModel ExchangeCurrency(string from, string to);
     }
 }

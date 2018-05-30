@@ -32,7 +32,7 @@ namespace CurrencyFeed
                     .WithIdentity("trigger1", "group1")
                     .StartNow()
                     .WithSimpleSchedule(x => x
-                        .WithIntervalInSeconds(60)
+                        .WithIntervalInHours(8)
                         .RepeatForever())
                     .Build();
 
