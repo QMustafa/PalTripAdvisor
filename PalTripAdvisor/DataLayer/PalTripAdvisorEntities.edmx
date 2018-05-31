@@ -69,12 +69,12 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="Weather">
+        <EntityType Name="Weathers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Degree" Type="decimal" Precision="3" Scale="2" Nullable="false" />
           <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
@@ -125,7 +125,7 @@
           <EntitySet Name="Hotels" EntityType="Self.Hotels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PointOfInterests" EntityType="Self.PointOfInterests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Weather" EntityType="Self.Weather" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Weathers" EntityType="Self.Weathers" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CurrenciesExchange_Currencies" Association="Self.FK_CurrenciesExchange_Currencies">
             <End Role="Currencies" EntitySet="Currencies" />
             <End Role="CurrenciesExchanges" EntitySet="CurrenciesExchanges" />
@@ -238,7 +238,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Degree" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -360,7 +360,7 @@
           </EntitySetMapping>
           <EntitySetMapping Name="Weathers">
             <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.Weather">
-              <MappingFragment StoreEntitySet="Weather">
+              <MappingFragment StoreEntitySet="Weathers">
                 <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
