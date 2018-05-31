@@ -14,7 +14,7 @@ namespace PalTripAdvisor
     {
         [OperationContract]
         [WebGet(UriTemplate = "/getHotelsByCity/{city}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
-        List<HotelsDomain> getHotelsByCity(string city);
+        string getHotelsByCity(string city);
         [OperationContract]
         [WebGet(UriTemplate = "/getHotelsByCountry/{country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         List<HotelsDomain> getHotelsByCountry(string country);
