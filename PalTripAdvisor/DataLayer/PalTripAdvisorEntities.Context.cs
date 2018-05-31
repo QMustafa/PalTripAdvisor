@@ -30,5 +30,6 @@ namespace DataLayer
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<PointOfInterest> PointOfInterests { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Weather> Weathers { get; set; }
     }
 }

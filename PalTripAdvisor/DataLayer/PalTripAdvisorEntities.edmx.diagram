@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="PalTripAdvisorServicesModel.Hotel" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="PalTripAdvisorServicesModel.PointOfInterest" Width="1.5" PointX="3" PointY="4.875" />
         <EntityTypeShape EntityType="PalTripAdvisorServicesModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PalTripAdvisorServicesModel.Weather" Width="1.5" PointX="7.75" PointY="0.75" />
         <AssociationConnector Association="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies" />
         <AssociationConnector Association="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies1" />
         <AssociationConnector Association="PalTripAdvisorServicesModel.FK_PointOfInterest_Currencies" />

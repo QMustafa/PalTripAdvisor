@@ -69,6 +69,20 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Weather">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Degree" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_CurrenciesExchange_Currencies">
           <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
           <End Role="CurrenciesExchanges" Type="Self.CurrenciesExchanges" Multiplicity="*" />
@@ -111,6 +125,7 @@
           <EntitySet Name="Hotels" EntityType="Self.Hotels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PointOfInterests" EntityType="Self.PointOfInterests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Weather" EntityType="Self.Weather" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CurrenciesExchange_Currencies" Association="Self.FK_CurrenciesExchange_Currencies">
             <End Role="Currencies" EntitySet="Currencies" />
             <End Role="CurrenciesExchanges" EntitySet="CurrenciesExchanges" />
@@ -134,6 +149,7 @@
           <EntitySet Name="Hotels" EntityType="PalTripAdvisorServicesModel.Hotel" />
           <EntitySet Name="PointOfInterests" EntityType="PalTripAdvisorServicesModel.PointOfInterest" />
           <EntitySet Name="sysdiagrams" EntityType="PalTripAdvisorServicesModel.sysdiagram" />
+          <EntitySet Name="Weathers" EntityType="PalTripAdvisorServicesModel.Weather" />
           <AssociationSet Name="FK_CurrenciesExchange_Currencies" Association="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies">
             <End Role="Currency" EntitySet="Currencies" />
             <End Role="CurrenciesExchanx" EntitySet="CurrenciesExchanges" />
@@ -216,6 +232,20 @@
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Weather">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Degree" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_CurrenciesExchange_Currencies">
           <End Type="PalTripAdvisorServicesModel.Currency" Role="Currency" Multiplicity="1" />
@@ -325,6 +355,21 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Weathers">
+            <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.Weather">
+              <MappingFragment StoreEntitySet="Weather">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Degree" ColumnName="Degree" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

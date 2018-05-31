@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/27/2018 17:45:25
+-- Date Created: 05/31/2018 18:35:55
 -- Generated from EDMX file: D:\Work\University\SOA\PalTripAdvisor\PalTripAdvisor\DataLayer\PalTripAdvisorEntities.edmx
 -- --------------------------------------------------
 
@@ -18,13 +18,13 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_CurrenciesExchange_Currencies]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[CurrenciesExchange] DROP CONSTRAINT [FK_CurrenciesExchange_Currencies];
+    ALTER TABLE [dbo].[CurrenciesExchanges] DROP CONSTRAINT [FK_CurrenciesExchange_Currencies];
 GO
 IF OBJECT_ID(N'[dbo].[FK_CurrenciesExchange_Currencies1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[CurrenciesExchange] DROP CONSTRAINT [FK_CurrenciesExchange_Currencies1];
+    ALTER TABLE [dbo].[CurrenciesExchanges] DROP CONSTRAINT [FK_CurrenciesExchange_Currencies1];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PointOfInterest_Currencies]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PointOfInterest] DROP CONSTRAINT [FK_PointOfInterest_Currencies];
+    ALTER TABLE [dbo].[PointOfInterests] DROP CONSTRAINT [FK_PointOfInterest_Currencies];
 GO
 
 -- --------------------------------------------------
@@ -34,11 +34,14 @@ GO
 IF OBJECT_ID(N'[dbo].[Currencies]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Currencies];
 GO
-IF OBJECT_ID(N'[dbo].[CurrenciesExchange]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CurrenciesExchange];
+IF OBJECT_ID(N'[dbo].[CurrenciesExchanges]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CurrenciesExchanges];
 GO
-IF OBJECT_ID(N'[dbo].[PointOfInterest]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PointOfInterest];
+IF OBJECT_ID(N'[dbo].[Hotels]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Hotels];
+GO
+IF OBJECT_ID(N'[dbo].[PointOfInterests]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PointOfInterests];
 GO
 IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
     DROP TABLE [dbo].[sysdiagrams];
@@ -50,7 +53,7 @@ GO
 
 -- Creating table 'Currencies'
 CREATE TABLE [dbo].[Currencies] (
-    [Id] uniqueidentifier  NOT NULL,
+    [Id] smallint IDENTITY(1,1) NOT NULL,
     [Name] varchar(50)  NOT NULL,
     [Slug] varchar(3)  NOT NULL
 );
@@ -58,10 +61,26 @@ GO
 
 -- Creating table 'CurrenciesExchanges'
 CREATE TABLE [dbo].[CurrenciesExchanges] (
-    [Id] uniqueidentifier  NOT NULL,
-    [OriginalCurrencyId] uniqueidentifier  NOT NULL,
-    [TargetCurrencyId] uniqueidentifier  NOT NULL,
+    [id] smallint IDENTITY(1,1) NOT NULL,
+    [OriginalCurrencyId] smallint  NOT NULL,
+    [TargetCurrencyId] smallint  NOT NULL,
     [Factor] decimal(6,3)  NOT NULL,
+    [CreatedBy] varchar(50)  NOT NULL,
+    [CreatedDate] datetime  NOT NULL,
+    [ModifiedBy] varchar(50)  NULL,
+    [ModifiedDate] datetime  NULL
+);
+GO
+
+-- Creating table 'Hotels'
+CREATE TABLE [dbo].[Hotels] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] varchar(50)  NOT NULL,
+    [CountyName] varchar(50)  NOT NULL,
+    [CityName] varchar(50)  NOT NULL,
+    [Rating] int  NOT NULL,
+    [Image] varchar(max)  NULL,
+    [AveragePrice] decimal(8,2)  NOT NULL,
     [CreatedBy] varchar(50)  NOT NULL,
     [CreatedDate] datetime  NOT NULL,
     [ModifiedBy] varchar(50)  NULL,
@@ -71,13 +90,14 @@ GO
 
 -- Creating table 'PointOfInterests'
 CREATE TABLE [dbo].[PointOfInterests] (
-    [Id] uniqueidentifier  NOT NULL,
+    [Id] smallint IDENTITY(1,1) NOT NULL,
     [Name] varchar(100)  NOT NULL,
-    [Image] varbinary(max)  NULL,
+    [Image] varchar(max)  NULL,
     [CityName] varchar(50)  NOT NULL,
     [CountryName] varchar(50)  NOT NULL,
     [Starts] int  NULL,
-    [CurrencyId] uniqueidentifier  NOT NULL,
+    [CurrencyId] smallint  NOT NULL,
+    [ZipCode] int  NOT NULL,
     [CreatedBy] varchar(50)  NOT NULL,
     [CreatedDate] datetime  NOT NULL,
     [ModifiedBy] varchar(50)  NULL,
@@ -105,9 +125,15 @@ ADD CONSTRAINT [PK_Currencies]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'CurrenciesExchanges'
+-- Creating primary key on [id] in table 'CurrenciesExchanges'
 ALTER TABLE [dbo].[CurrenciesExchanges]
 ADD CONSTRAINT [PK_CurrenciesExchanges]
+    PRIMARY KEY CLUSTERED ([id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Hotels'
+ALTER TABLE [dbo].[Hotels]
+ADD CONSTRAINT [PK_Hotels]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

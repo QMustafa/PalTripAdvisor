@@ -82,7 +82,12 @@
     <Compile Include="Respositories\CurrencyExchangeRepository.cs" />
     <Compile Include="Respositories\HotelsRepository.cs" />
     <Compile Include="Respositories\PointOfInterestRepository.cs" />
+    <Compile Include="Respositories\WeatherRepository.cs" />
+    <Compile Include="Respositories\WeatherResponseDomainObjectWrapper1.cs" />
     <Compile Include="sysdiagram.cs">
+      <DependentUpon>PalTripAdvisorEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Weather.cs">
       <DependentUpon>PalTripAdvisorEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>
