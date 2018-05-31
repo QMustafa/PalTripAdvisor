@@ -36,7 +36,7 @@ namespace PalTripAdvisor
         /// <response code="400">The filter is not valid.</response>
         /// <response code="500">Server error.</response>
         /// <returns></returns>
-        public string getHotelsByCity(string city)
+        public HotelsDomain getHotelsByCity(string city)
         {
             using (HotelsRepository repository = new HotelsRepository())
             {
@@ -60,7 +60,7 @@ namespace PalTripAdvisor
                     });
                 }
 
-                return temp.FirstOrDefault().Name;
+                return temp.FirstOrDefault();
             }
         }
 
