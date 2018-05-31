@@ -11,7 +11,7 @@
           </Key>
           <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Slug" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="Slug" Type="varchar" MaxLength="5" Nullable="false" />
         </EntityType>
         <EntityType Name="CurrenciesExchanges">
           <Key>
@@ -75,13 +75,14 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
-          <Property Name="Degree" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+          <Property Name="Degree" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
           <Property Name="ModifiedDate" Type="datetime" />
           <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_CurrenciesExchange_Currencies">
           <End Role="Currencies" Type="Self.Currencies" Multiplicity="1" />
@@ -169,7 +170,7 @@
           </Key>
           <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Slug" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Slug" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CurrenciesExchanges" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies" FromRole="Currency" ToRole="CurrenciesExchanx" />
           <NavigationProperty Name="CurrenciesExchanges1" Relationship="PalTripAdvisorServicesModel.FK_CurrenciesExchange_Currencies1" FromRole="Currency" ToRole="CurrenciesExchanx" />
           <NavigationProperty Name="PointOfInterests" Relationship="PalTripAdvisorServicesModel.FK_PointOfInterest_Currencies" FromRole="Currency" ToRole="PointOfInterest" />
@@ -239,13 +240,14 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Degree" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="Degree" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
           <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_CurrenciesExchange_Currencies">
           <End Type="PalTripAdvisorServicesModel.Currency" Role="Currency" Multiplicity="1" />
@@ -361,6 +363,7 @@
           <EntitySetMapping Name="Weathers">
             <EntityTypeMapping TypeName="PalTripAdvisorServicesModel.Weather">
               <MappingFragment StoreEntitySet="Weathers">
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
                 <ScalarProperty Name="Country" ColumnName="Country" />
                 <ScalarProperty Name="City" ColumnName="City" />
                 <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />

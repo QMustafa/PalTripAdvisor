@@ -33,7 +33,8 @@ namespace PalTripAdvisor
                     City = item.City,
                     Degree = item.Degree,
                     Country = item.Country,
-                    Day = item.Day.ToShortDateString()
+                    Day = item.Day.ToShortDateString(),
+                    zipCode = item.zipCode
                 });
             }
             return new WeatherResponseDomainObjectWrapper { MessageResponse = "200, result fetched successfully", WeatherStatus = data };
@@ -54,10 +55,34 @@ namespace PalTripAdvisor
                     City = item.City,
                     Degree = item.Degree,
                     Country = item.Country,
-                    Day = item.Day.ToShortDateString()
+                    Day = item.Day.ToShortDateString(),
+                    zipCode = item.zipCode
                 });
             }
             return new WeatherResponseDomainObjectWrapper { MessageResponse = "200, result fetched successfully", WeatherStatus = data};
+        }
+
+        [WebMethod]
+        public WeatherResponseDomainObjectWrapper GetWeatherByZipCode(string from, string to, string zipCode)
+        {
+            WeatherRepository repository = new WeatherRepository();
+            DateTime fromDate = DateTime.Parse(from);
+            DateTime toDate = DateTime.Parse(to);
+            var temp = repository.GetWeatherByZipCode(fromDate, toDate, zipCode);
+            List<WeatherResponseDomainObject> data = new List<WeatherResponseDomainObject>();
+            foreach (var item in temp)
+            {
+                data.Add(new WeatherResponseDomainObject()
+                {
+                    City = item.City,
+                    Degree = item.Degree,
+                    Country = item.Country,
+                    Day = item.Day.ToShortDateString(),
+                    zipCode = item.zipCode
+
+                });
+            }
+            return new WeatherResponseDomainObjectWrapper { MessageResponse = "200, result fetched successfully", WeatherStatus = data };
         }
 
     }
