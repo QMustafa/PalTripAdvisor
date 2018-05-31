@@ -27,7 +27,10 @@ namespace PalTripAdvisor.Models
         public string City { get; set; }
         [DataMember]
         public string Country { get; set; }
-        
-        
+        [DataMember]
+        public string zipCode { get; set; }
+
+
+
     }
 }
