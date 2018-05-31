@@ -13,7 +13,7 @@ namespace PalTripAdvisor
     public interface IGetClosestHotels
     {
         [OperationContract]
-        [WebGet(UriTemplate = "/getHotelsByCity/{city}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebGet(UriTemplate = "/getHotelsByCity/{city}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Wrapped)]
         HotelsDomain getHotelsByCity(string city);
         [OperationContract]
         [WebGet(UriTemplate = "/getHotelsByCountry/{country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
