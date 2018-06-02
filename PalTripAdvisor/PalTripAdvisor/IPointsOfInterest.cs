@@ -16,16 +16,16 @@ namespace PalTripAdvisor
     public interface IPointsOfInterest
     {
         [OperationContract]
-        [WebGet(UriTemplate = "/GetPOIByCountry/{country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebGet(UriTemplate = "/GetPOIByCountry/{country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         [Description("Get point of interset in a specific country.")]
         PointOfInterest GetPOIByCountry(string country);
         [OperationContract]
         [Description("Get point of interset in a specific country & city.")]
-        [WebGet(UriTemplate = "/GetPOIByCity/{country}/{city}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebGet(UriTemplate = "/GetPOIByCity/{country}/{city}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         PointOfInterest GetPOIByCity(string country, string city);
         [OperationContract]
         [Description("Add rating to this point of interest by doing a post request on this end point with the id of the point of interest and the rating between 1 to 5.")]
-        [WebInvoke(Method = "POST", UriTemplate = "/AddRating/{id}/{rating}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(Method = "POST", UriTemplate = "/AddRating/{id}/{rating}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string addRating(string id, string rating);
         [OperationContract]
         [Description("Taked the responsed full json from point of enterest, and returns ont the country name.")]
@@ -78,34 +78,25 @@ namespace PalTripAdvisor
         public PointOfInterest data { set; get; }
     }
 
-    [DataContract(Name = "book")]
-    [Description("Book with title, first publish date, author and language")]
-    [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
+    [DataContract]
     public class GetPOIByZipCodeResult
     {
         [DataMember(Name = "GetPOIByZipCodeResult")]
-        [Description("Book ID")]
         public PointOfInterest data { set; get; }
     }
 
 
-    [DataContract(Name = "book")]
-    [Description("Book with title, first publish date, author and language")]
-    [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
+    [DataContract]
     public class GetPOIByCountryResult
     {
         [DataMember(Name = "GetPOIByCountryResult")]
-        [Description("Book ID")]
         public PointOfInterest data { set; get; }
     }
 
-    [DataContract(Name = "book")]
-    [Description("Book with title, first publish date, author and language")]
-    [SwaggerWcfDefinition(ExternalDocsUrl = "http://en.wikipedia.org/wiki/Book", ExternalDocsDescription = "Description of a book")]
+    [DataContract]
     public class GetPOIByCityResult
     {
         [DataMember(Name = "GetPOIByCityResult")]
-        [Description("Book ID")]
         public PointOfInterest data { set; get; }
     }
 
