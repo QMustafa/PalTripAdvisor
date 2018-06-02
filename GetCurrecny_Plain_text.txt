@@ -1,0 +1,32 @@
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:1:distinationCurrency,JD
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:1:originalcurrency,USD
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:2:currencyfactor,
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:0:CALLER,null
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:0:delete_on_finish,null
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:0:READYDT,2018-06-03 24:39:08.717
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:0:START,1
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:0:STARTDT,2018-06-03 24:39:08.725
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:0:STATE,3
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].0.0:0:SuspendAfterCreation,null
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:1:distinationCurrency,JD
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:1:originalcurrency,USD
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:2:Factor,null
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:HOST,192.168.56.1
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:NAME,getCurrencyFactor
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:PROGNAME,{TravelSuggestionoml}getCurrencyFactor[1.0]
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:READYDT,2018-06-03 24:39:08.727
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:RESTART,0
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:START,1
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:STARTDT,2018-06-03 24:39:08.729
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:STATE,3
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:0:TYPE,ACTY
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:4:AM,SOAP_CURRENCY_INVOKEAdapter
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:4:destination,http://qutaibamustafa.eastus.cloudapp.azure.com/CurrencyExchange.asmx
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:4:message,<soapEnv:Envelope xmlns:soapEnv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapEnc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdns0="http://tempuri.org/" xmlns:bns="http://tempuri.org/">
+<soapEnv:Body>
+    <bns:ExchangeCurrency soapEnv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <bns:from xsi:type="xsd:string">USD</bns:from>
+  <bns:to xsi:type="xsd:string">JD</bns:to>
+</bns:ExchangeCurrency>
+</soapEnv:Body></soapEnv:Envelope>
+{TravelSuggestionoml}Test_getCurrencyFactor[1.0].getCurrencyFactor.0:4:SOAPaction,http://tempuri.org/ExchangeCurrency
