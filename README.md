@@ -22,3 +22,5 @@ also in the above links you can find the XML format and WSDL file, SOAP 1.1 and 
 For Rest APIs: 
 You can use the below links ( helper ) to check the documntaion for the rest APIs in any format you need XML schema .. ect
 
+getClosestHotel: http://qutaibamustafa.eastus.cloudapp.azure.com/GetClosestHotels.svc/json/help
+getPointOfIntrest: http://qutaibamustafa.eastus.cloudapp.azure.com/PointsOfInterest.svc/json/help
