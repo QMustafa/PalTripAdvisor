@@ -120,7 +120,6 @@
   <ItemGroup>
     <Content Include="App_Start\Global.asax" />
     <Content Include="CurrencyExchange.asmx" />
-    <Content Include="CurrencyExchange.svc" />
     <Content Include="GetClosestHotels.svc" />
     <Content Include="GetWeather.asmx" />
     <Content Include="PointsOfInterest.svc" />
@@ -136,9 +135,6 @@
       <DependentUpon>CurrencyExchange.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CurrencyExchange.svc.cs">
-      <DependentUpon>CurrencyExchange.svc</DependentUpon>
-    </Compile>
     <Compile Include="GetClosestHotels.svc.cs">
       <DependentUpon>GetClosestHotels.svc</DependentUpon>
     </Compile>
@@ -146,7 +142,6 @@
       <DependentUpon>GetWeather.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ICurrencyExchange.cs" />
     <Compile Include="IGetClosestHotels.cs" />
     <Compile Include="IPointsOfInterest.cs" />
     <Compile Include="Models\CurrencyExchangeResponseDomainModel.cs" />

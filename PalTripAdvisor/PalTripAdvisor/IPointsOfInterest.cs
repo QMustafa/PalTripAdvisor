@@ -15,32 +15,40 @@ namespace PalTripAdvisor
     [ServiceContract]
     public interface IPointsOfInterest
     {
-        [SwaggerWcfPath("Create book", "Create a book on the store")]
         [OperationContract]
         [WebGet(UriTemplate = "/GetPOIByCountry/{country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [Description("Get point of interset in a specific country.")]
         PointOfInterest GetPOIByCountry(string country);
         [OperationContract]
+        [Description("Get point of interset in a specific country & city.")]
         [WebGet(UriTemplate = "/GetPOIByCity/{country}/{city}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         PointOfInterest GetPOIByCity(string country, string city);
         [OperationContract]
+        [Description("Add rating to this point of interest by doing a post request on this end point with the id of the point of interest and the rating between 1 to 5.")]
         [WebInvoke(Method = "POST", UriTemplate = "/AddRating/{id}/{rating}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         string addRating(string id, string rating);
         [OperationContract]
+        [Description("Taked the responsed full json from point of enterest, and returns ont the country name.")]
         [WebInvoke(Method = "POST", UriTemplate = "/getCountry", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getCountry(GetPOIByCountryResult model);
         [OperationContract]
+        [Description("Taked the responsed full json from point of enterest, and returns ont the city name.")]
         [WebInvoke(Method = "POST", UriTemplate = "/getCity", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getCity(GetPOIByCityResult model);
         [OperationContract]
+        [Description("Taked the responsed full json from point of enterest, and returns ont the currency slug.")]
         [WebInvoke(Method = "POST", UriTemplate = "/getCurrency", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getCurrency(GetPOIByCityResult model);
         [OperationContract]
+        [Description("Taked the responsed full json from point of enterest, and returns ont the currency slug.")]
         [WebInvoke(Method = "POST", UriTemplate = "/getCurrency2", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getCurrency2(GetPOIByCountryResult model);
         [OperationContract]
+        [Description("Taked the responsed full json from point of enterest, and returns ont the image link.")]
         [WebInvoke(Method = "POST", UriTemplate = "/getImage", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getImage(GetPOIByImageResult model);
         [OperationContract]
+        [Description("Taked the responsed full json from point of enterest, and returns ont the zip code.")]
         [WebInvoke(Method = "POST", UriTemplate = "/getZipCode", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getZipCode(GetPOIByCityResult model);
 
