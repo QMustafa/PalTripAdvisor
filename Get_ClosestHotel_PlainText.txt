@@ -1,0 +1,42 @@
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:1:City,Istanbul
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:2:listOfHotel,null
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:CALLER,null
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:delete_on_finish,null
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:ENDDT,2018-06-03 24:39:48.540
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:Finalized,Yes
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:READYDT,2018-06-03 24:39:47.370
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:START,1
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:STARTDT,2018-06-03 24:39:47.374
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:STATE,4
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:SuspendAfterCreation,null
+{TravelSuggestionoml}Test_getCloseHotel[1.0].0.0:0:WALL,1.17
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:1:City,Istanbul
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:2:listOfHotel,null
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:ENDDT,2018-06-03 24:39:48.540
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:HOST,192.168.56.1
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:NAME,getCloseHotel
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:PROGNAME,{TravelSuggestionoml}getCloseHotel[1.0]
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:READYDT,2018-06-03 24:39:47.374
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:RESTART,null
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:START,1
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:STARTDT,2018-06-03 24:39:47.382
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:STATE,4
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:TYPE,ACTY
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:0:WALL,1.166
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:4:AM,Get_Closest_HotelHTTPAdapter
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:4:method,GET
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:4:urlstring,http://qutaibamustafa.eastus.cloudapp.azure.com/GetClosestHotels.svc/json/getHotelsByCity/Istanbul
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:5:errormsg,OK
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:5:headout,null:[HTTP/1.1 200 OK]
+X-AspNet-Version:[4.0.30319]
+Date:[Sat, 02 Jun 2018 22:39:50 GMT]
+Content-Length:[504]
+Content-Type:[application/xml; charset=utf-8]
+Server:[Microsoft-IIS/10.0]
+X-Powered-By:[ASP.NET]
+Cache-Control:[private]
+
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:5:page,<HotelsDomain xmlns="http://schemas.datacontract.org/2004/07/PalTripAdvisor" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AveragePrice>55.00</AveragePrice><CityName>"istanbul"&#xD;
+</CityName><CountyName>Turkey</CountyName><CreatedBy>Qutaiba</CreatedBy><CreatedDate>5/5/2018</CreatedDate><Id>1</Id><Image>http://qutaibamustafa.eastus.cloudapp.azure.com/POIImages/to be added later</Image><ModifiedBy i:nil="true"/><ModifiedDate i:nil="true"/><Name>Sheraton</Name><Rating>5</Rating></HotelsDomain>
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:5:responseheaders,{null=[HTTP/1.1 200 OK], X-AspNet-Version=[4.0.30319], Date=[Sat, 02 Jun 2018 22:39:50 GMT], Content-Length=[504], Content-Type=[application/xml; charset=utf-8], Server=[Microsoft-IIS/10.0], X-Powered-By=[ASP.NET], Cache-Control=[private]}
+{TravelSuggestionoml}Test_getCloseHotel[1.0].getCloseHotel.0:5:status,200
