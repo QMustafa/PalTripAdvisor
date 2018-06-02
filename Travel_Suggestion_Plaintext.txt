@@ -1,0 +1,220 @@
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:1:country,Turkey
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:1:datefrom,05-05-2018
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:1:dateto,05-07-2018
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:1:originalcurrency,USD
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:2:Factor,
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:2:listOfHotel,<getHotelsByCityResponse xmlns="http://tempuri.org/"><getHotelsByCityResult xmlns:a="http://schemas.datacontract.org/2004/07/PalTripAdvisor" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><a:AveragePrice>55.00</a:AveragePrice><a:CityName>"istanbul"&#xD;
+</a:CityName><a:CountyName>Turkey</a:CountyName><a:CreatedBy>Qutaiba</a:CreatedBy><a:CreatedDate>5/5/2018</a:CreatedDate><a:Id>1</a:Id><a:Image>http://qutaibamustafa.eastus.cloudapp.azure.com/POIImages/to be added later</a:Image><a:ModifiedBy i:nil="true"/><a:ModifiedDate i:nil="true"/><a:Name>Sheraton</a:Name><a:Rating>5</a:Rating></getHotelsByCityResult></getHotelsByCityResponse>
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:2:weatherdegree,
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:0:CALLER,null
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:0:delete_on_finish,null
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:0:READYDT,2018-06-02 20:47:39.328
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:0:START,1
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:0:STARTDT,2018-06-02 20:47:39.332
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:0:STATE,3
+{TravelSuggestionoml}TravelSuggestion[1.0].0.2:0:SuspendAfterCreation,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:1:City,"Istanbul"
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:2:listOfHotel,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:ENDDT,2018-06-02 20:47:41.077
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:HOST,10.100.17.211
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:NAME,getCloseHotel
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:PROGNAME,{TravelSuggestionoml}getCloseHotel[1.0]
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:READYDT,2018-06-02 20:47:40.325
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:RESTART,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:START,1
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:STARTDT,2018-06-02 20:47:40.325
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:STATE,4
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:TYPE,ACTY
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:0:WALL,0.752
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:4:AM,Get_Closest_HotelHTTPAdapter
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:4:method,GET
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:4:urlstring,http://qutaibamustafa.eastus.cloudapp.azure.com/GetClosestHotels.svc/json/getHotelsByCity/Istanbul
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:5:errormsg,OK
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:5:headout,null:[HTTP/1.1 200 OK]
+X-AspNet-Version:[4.0.30319]
+Date:[Sat, 02 Jun 2018 18:47:41 GMT]
+Content-Length:[643]
+Content-Type:[application/xml; charset=utf-8]
+Server:[Microsoft-IIS/10.0]
+X-Powered-By:[ASP.NET]
+Cache-Control:[private]
+
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:5:page,<getHotelsByCityResponse xmlns="http://tempuri.org/"><getHotelsByCityResult xmlns:a="http://schemas.datacontract.org/2004/07/PalTripAdvisor" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><a:AveragePrice>55.00</a:AveragePrice><a:CityName>"istanbul"&#xD;
+</a:CityName><a:CountyName>Turkey</a:CountyName><a:CreatedBy>Qutaiba</a:CreatedBy><a:CreatedDate>5/5/2018</a:CreatedDate><a:Id>1</a:Id><a:Image>http://qutaibamustafa.eastus.cloudapp.azure.com/POIImages/to be added later</a:Image><a:ModifiedBy i:nil="true"/><a:ModifiedDate i:nil="true"/><a:Name>Sheraton</a:Name><a:Rating>5</a:Rating></getHotelsByCityResult></getHotelsByCityResponse>
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:5:responseheaders,{null=[HTTP/1.1 200 OK], X-AspNet-Version=[4.0.30319], Date=[Sat, 02 Jun 2018 18:47:41 GMT], Content-Length=[643], Content-Type=[application/xml; charset=utf-8], Server=[Microsoft-IIS/10.0], X-Powered-By=[ASP.NET], Cache-Control=[private]}
+{TravelSuggestionoml}TravelSuggestion[1.0].getCloseHotel.2:5:status,200
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:1:distinationCurrency,"\"JD\""
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:1:originalcurrency,USD
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:2:Factor,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:HOST,10.100.17.211
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:NAME,getCurrencyFactor
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:PROGNAME,{TravelSuggestionoml}getCurrencyFactor[1.0]
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:READYDT,2018-06-02 20:47:41.105
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:RESTART,0
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:START,1
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:STARTDT,2018-06-02 20:47:41.109
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:STATE,3
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:0:TYPE,ACTY
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:4:AM,SOAP_CURRENCY_INVOKEAdapter
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:4:destination,http://qutaibamustafa.eastus.cloudapp.azure.com/CurrencyExchange.asmx
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:4:message,<soapEnv:Envelope xmlns:soapEnv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapEnc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdns0="http://tempuri.org/" xmlns:bns="http://tempuri.org/">
+<soapEnv:Body>
+    <bns:ExchangeCurrency soapEnv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <bns:from xsi:type="xsd:string">USD</bns:from>
+  <bns:to xsi:type="xsd:string">"\"JD\""</bns:to>
+</bns:ExchangeCurrency>
+</soapEnv:Body></soapEnv:Envelope>
+{TravelSuggestionoml}TravelSuggestion[1.0].getCurrencyFactor.2:4:SOAPaction,http://tempuri.org/ExchangeCurrency
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:1:country,Turkey
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:2:POI_JSon,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:ENDDT,2018-06-02 20:47:40.075
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:HOST,10.100.17.211
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:NAME,getPointOfIntrest
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:PROGNAME,{TravelSuggestionoml}getPointOfIntrest[1.0]
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:READYDT,2018-06-02 20:47:39.336
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:RESTART,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:START,1
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:STARTDT,2018-06-02 20:47:39.336
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:STATE,4
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:TYPE,ACTY
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:0:WALL,0.739
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:4:AM,POI_REST_HTTPAdapter
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:4:method,GET
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:4:urlstring,http://qutaibamustafa.eastus.cloudapp.azure.com/PointsOfInterest.svc/json/GetPOIByCity/Turkey/Istanbul
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:5:errormsg,OK
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:5:headout,null:[HTTP/1.1 200 OK]
+X-AspNet-Version:[4.0.30319]
+Date:[Sat, 02 Jun 2018 18:47:41 GMT]
+Content-Length:[312]
+Content-Type:[application/json; charset=utf-8]
+Server:[Microsoft-IIS/10.0]
+X-Powered-By:[ASP.NET]
+Cache-Control:[private]
+
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:5:page,{"GetPOIByCityResult":{"CityName":"Istanbul","CountryName":"Turkey","CreatedBy":"Qutaiba","CreatedDate":"5\/5\/2018","CurrencyId":1,"Id":1,"Image":"http:\/\/qutaibamustafa.eastus.cloudapp.azure.com\/POIImages\/to be added later","ModifiedBy":null,"ModifiedDate":null,"Name":"AyaSofia","Starts":5,"ZipCode":"90"}}
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:5:responseheaders,{null=[HTTP/1.1 200 OK], X-AspNet-Version=[4.0.30319], Date=[Sat, 02 Jun 2018 18:47:41 GMT], Content-Length=[312], Content-Type=[application/json; charset=utf-8], Server=[Microsoft-IIS/10.0], X-Powered-By=[ASP.NET], Cache-Control=[private]}
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest.2:5:status,200
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest1.2:1:country,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest1.2:2:POI_JSon,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest1.2:0:NAME,getPointOfIntrest1
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest1.2:0:PROGNAME,{TravelSuggestionoml}getPointOfIntrest[1.0]
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest1.2:0:READYDT,2018-06-02 20:47:39.328
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest1.2:0:STATE,0
+{TravelSuggestionoml}TravelSuggestion[1.0].getPointOfIntrest1.2:0:TYPE,ACTY
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:1:datefrom,05-05-2018
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:1:dateto,05-07-2018
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:1:Zipcode,"90"
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:2:wetherDegree,null
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:HOST,10.100.17.211
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:NAME,getWeather
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:PROGNAME,{TravelSuggestionoml}getWeather[1.0]
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:READYDT,2018-06-02 20:47:41.061
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:RESTART,0
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:START,1
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:STARTDT,2018-06-02 20:47:41.061
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:STATE,3
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:0:TYPE,ACTY
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:4:AM,WETHER_SOAP_INVOKEAdapter
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:4:destination,http://qutaibamustafa.eastus.cloudapp.azure.com/GetWeather.asmx
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:4:message,<soapEnv:Envelope xmlns:soapEnv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapEnc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsdns0="http://tempuri.org/" xmlns:bns="http://tempuri.org/">
+<soapEnv:Body>
+    <bns:GetWeatherByZipCode soapEnv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <bns:from xsi:type="xsd:string">05-05-2018</bns:from>
+  <bns:to xsi:type="xsd:string">05-07-2018</bns:to>
+  <bns:zipCode xsi:type="xsd:string">"90"</bns:zipCode>
+</bns:GetWeatherByZipCode>
+</soapEnv:Body></soapEnv:Envelope>
+{TravelSuggestionoml}TravelSuggestion[1.0].getWeather.2:4:SOAPaction,http://tempuri.org/GetWeatherByZipCode
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:1:POI_JSon,{"GetPOIByCityResult":{"CityName":"Istanbul","CountryName":"Turkey","CreatedBy":"Qutaiba","CreatedDate":"5\/5\/2018","CurrencyId":1,"Id":1,"Image":"http:\/\/qutaibamustafa.eastus.cloudapp.azure.com\/POIImages\/to be added later","ModifiedBy":null,"ModifiedDate":null,"Name":"AyaSofia","Starts":5,"ZipCode":"90"}}
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:2:CurrencyDestenation,null
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:ENDDT,2018-06-02 20:47:41.105
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:HOST,10.100.17.211
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:NAME,ResturnCurrencyfromJson
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:PROGNAME,{TravelSuggestionoml}ResturnCurrencyfromJson[1.0]
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:READYDT,2018-06-02 20:47:40.090
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:RESTART,null
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:START,1
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:STARTDT,2018-06-02 20:47:40.094
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:STATE,4
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:TYPE,ACTY
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:0:WALL,1.015
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:4:AM,REST_Currency_Json
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:4:body,{"GetPOIByCityResult":{"CityName":"Istanbul","CountryName":"Turkey","CreatedBy":"Qutaiba","CreatedDate":"5\/5\/2018","CurrencyId":1,"Id":1,"Image":"http:\/\/qutaibamustafa.eastus.cloudapp.azure.com\/POIImages\/to be added later","ModifiedBy":null,"ModifiedDate":null,"Name":"AyaSofia","Starts":5,"ZipCode":"90"}}
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:4:headin,content-type:application/json
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:4:method,POST
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:4:urlstring,http://qutaibamustafa.eastus.cloudapp.azure.com//PointsOfInterest.svc/json/GetCurrency
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:5:errormsg,OK
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:5:headout,null:[HTTP/1.1 200 OK]
+X-AspNet-Version:[4.0.30319]
+Date:[Sat, 02 Jun 2018 18:47:41 GMT]
+Content-Length:[8]
+Content-Type:[application/json; charset=utf-8]
+Server:[Microsoft-IIS/10.0]
+X-Powered-By:[ASP.NET]
+Cache-Control:[private]
+
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:5:page,"\"JD\""
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:5:responseheaders,{null=[HTTP/1.1 200 OK], X-AspNet-Version=[4.0.30319], Date=[Sat, 02 Jun 2018 18:47:41 GMT], Content-Length=[8], Content-Type=[application/json; charset=utf-8], Server=[Microsoft-IIS/10.0], X-Powered-By=[ASP.NET], Cache-Control=[private]}
+{TravelSuggestionoml}TravelSuggestion[1.0].ResturnCurrencyfromJson.2:5:status,200
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:1:POI_JSon,{"GetPOIByCityResult":{"CityName":"Istanbul","CountryName":"Turkey","CreatedBy":"Qutaiba","CreatedDate":"5\/5\/2018","CurrencyId":1,"Id":1,"Image":"http:\/\/qutaibamustafa.eastus.cloudapp.azure.com\/POIImages\/to be added later","ModifiedBy":null,"ModifiedDate":null,"Name":"AyaSofia","Starts":5,"ZipCode":"90"}}
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:2:ZipCode,null
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:ENDDT,2018-06-02 20:47:41.061
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:HOST,10.100.17.211
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:NAME,ReturenCityfromJson
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:PROGNAME,{TravelSuggestionoml}ReturenCityfromJson[1.0]
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:READYDT,2018-06-02 20:47:40.090
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:RESTART,null
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:START,1
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:STARTDT,2018-06-02 20:47:40.094
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:STATE,4
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:TYPE,ACTY
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:0:WALL,0.971
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:4:AM,REST_Json_City
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:4:body,{"GetPOIByCityResult":{"CityName":"Istanbul","CountryName":"Turkey","CreatedBy":"Qutaiba","CreatedDate":"5\/5\/2018","CurrencyId":1,"Id":1,"Image":"http:\/\/qutaibamustafa.eastus.cloudapp.azure.com\/POIImages\/to be added later","ModifiedBy":null,"ModifiedDate":null,"Name":"AyaSofia","Starts":5,"ZipCode":"90"}}
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:4:headin,content-type:application/json
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:4:method,POST
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:4:urlstring,http://qutaibamustafa.eastus.cloudapp.azure.com//PointsOfInterest.svc/json/GetZipCode
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:5:errormsg,OK
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:5:headout,null:[HTTP/1.1 200 OK]
+X-AspNet-Version:[4.0.30319]
+Date:[Sat, 02 Jun 2018 18:47:41 GMT]
+Content-Length:[4]
+Content-Type:[application/json; charset=utf-8]
+Server:[Microsoft-IIS/10.0]
+X-Powered-By:[ASP.NET]
+Cache-Control:[private]
+
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:5:page,"90"
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:5:responseheaders,{null=[HTTP/1.1 200 OK], X-AspNet-Version=[4.0.30319], Date=[Sat, 02 Jun 2018 18:47:41 GMT], Content-Length=[4], Content-Type=[application/json; charset=utf-8], Server=[Microsoft-IIS/10.0], X-Powered-By=[ASP.NET], Cache-Control=[private]}
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturenCityfromJson.2:5:status,200
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:1:POI_JSon,{"GetPOIByCityResult":{"CityName":"Istanbul","CountryName":"Turkey","CreatedBy":"Qutaiba","CreatedDate":"5\/5\/2018","CurrencyId":1,"Id":1,"Image":"http:\/\/qutaibamustafa.eastus.cloudapp.azure.com\/POIImages\/to be added later","ModifiedBy":null,"ModifiedDate":null,"Name":"AyaSofia","Starts":5,"ZipCode":"90"}}
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:2:City,null
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:ENDDT,2018-06-02 20:47:40.325
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:HOST,10.100.17.211
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:NAME,ReturnPOIname
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:PROGNAME,{TravelSuggestionoml}ReturnPOIname[1.0]
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:READYDT,2018-06-02 20:47:40.090
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:RESTART,null
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:START,1
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:STARTDT,2018-06-02 20:47:40.090
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:STATE,4
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:TYPE,ACTY
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:0:WALL,0.235
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:4:AM,Rest_Json_Name
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:4:body,{"GetPOIByCityResult":{"CityName":"Istanbul","CountryName":"Turkey","CreatedBy":"Qutaiba","CreatedDate":"5\/5\/2018","CurrencyId":1,"Id":1,"Image":"http:\/\/qutaibamustafa.eastus.cloudapp.azure.com\/POIImages\/to be added later","ModifiedBy":null,"ModifiedDate":null,"Name":"AyaSofia","Starts":5,"ZipCode":"90"}}
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:4:headin,content-type:application/json
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:4:method,POST
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:4:urlstring,http://qutaibamustafa.eastus.cloudapp.azure.com/PointsOfInterest.svc/json/GetCity
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:5:errormsg,OK
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:5:headout,null:[HTTP/1.1 200 OK]
+X-AspNet-Version:[4.0.30319]
+Date:[Sat, 02 Jun 2018 18:47:41 GMT]
+Content-Length:[10]
+Content-Type:[application/json; charset=utf-8]
+Server:[Microsoft-IIS/10.0]
+X-Powered-By:[ASP.NET]
+Cache-Control:[private]
+
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:5:page,"Istanbul"
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:5:responseheaders,{null=[HTTP/1.1 200 OK], X-AspNet-Version=[4.0.30319], Date=[Sat, 02 Jun 2018 18:47:41 GMT], Content-Length=[10], Content-Type=[application/json; charset=utf-8], Server=[Microsoft-IIS/10.0], X-Powered-By=[ASP.NET], Cache-Control=[private]}
+{TravelSuggestionoml}TravelSuggestion[1.0].ReturnPOIname.2:5:status,200
