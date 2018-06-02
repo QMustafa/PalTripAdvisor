@@ -112,42 +112,42 @@ namespace PalTripAdvisor
             
         }
 
-        public string getCountry(GetPOIByCountryResult model)
+        public string getCountry(PointOfInterest model)
         {
-            return model.data.CountryName;
+            return model.CountryName;
         }
 
-        public string getCity(GetPOIByCityResult model)
+        public string getCity(PointOfInterest model)
         {
-            return model.data.CityName;
+            return model.CityName;
         }
 
-        public string getCurrency(GetPOIByCityResult model)
+        public string getCurrency(PointOfInterest model)
         {
             using (PointOfInterestRepository repository = new PointOfInterestRepository())
             {
-                var data = repository.getCurrencySlug(model.data.CurrencyId);
+                var data = repository.getCurrencySlug(model.CurrencyId);
                 return data;
             }
         }
 
-        public string getCurrency2(GetPOIByCountryResult model)
+        public string getCurrency2(PointOfInterest model)
         {
             using (PointOfInterestRepository repository = new PointOfInterestRepository())
             {
-                var data = repository.getCurrencySlug(model.data.CurrencyId);
+                var data = repository.getCurrencySlug(model.CurrencyId);
                 return data;
             }
         }
 
-        public string getImage(GetPOIByImageResult model)
+        public string getImage(PointOfInterest model)
         {
-            return model.data.Image;
+            return model.Image;
         }
 
-        public string getZipCode(GetPOIByCityResult model)
+        public string getZipCode(PointOfInterest model)
         {
-            return model.data.ZipCode;
+            return model.ZipCode;
         }
     }
 }
