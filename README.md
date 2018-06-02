@@ -8,6 +8,7 @@ Our service will suggest hotels also in order to offer a package of data to the 
 Our peoject is attached in the reposotry , but in the future we will add another services. You can download the oml and run the configruation after enter the needed parameters , country, date to-from to  travel and the local currency for your country. 
 For now we have dumpy data in our database, maybe in the future we will export data from other respurses and import it to ourdata base so you have the hotel, wehather and currency factor for your destenations. 
 
+*******************************************************************************************************************************************
 
 If you need a documntation for the APIs we used , you can simply use the below : 
 
@@ -39,4 +40,7 @@ And using the Description annotation attribute from the Component model library 
 ```xml
 [Description("Get point of interset in a specific country.")]
 ```
+*******************************************************************************************************************************************
 
+
+For the report please see Assignment5_v3 . 
