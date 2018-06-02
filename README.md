@@ -26,12 +26,17 @@ getClosestHotel: http://qutaibamustafa.eastus.cloudapp.azure.com/GetClosestHotel
 getPointOfIntrest: http://qutaibamustafa.eastus.cloudapp.azure.com/PointsOfInterest.svc/json/help
 
 WCF Helper implemented by only enabling the built-in web helpers in WCF:
+```xml
 <endpointBehaviors>
         <behavior name="restfullBehavior">
           <webHttp helpEnabled="true" />
         </behavior>
 </endpointBehaviors>
+```
+
 
 And using the Description annotation attribute from the Component model library to add a description for each end-point (above each operation contarct inside the service contract):
+```xml
 [Description("Get point of interset in a specific country.")]
+```
 
