@@ -7,3 +7,18 @@ Our service will suggest hotels also in order to offer a package of data to the 
 
 Our peoject is attached in the reposotry , but in the future we will add another services. You can download the oml and run the configruation after enter the needed parameters , country, date to-from to  travel and the local currency for your country. 
 For now we have dumpy data in our database, maybe in the future we will export data from other respurses and import it to ourdata base so you have the hotel, wehather and currency factor for your destenations. 
+
+
+If you need a documntation for the APIs we used , you can simply use the below : 
+
+For SOAP APIs: 
+you can follow the below links 
+Currecny exchange:  http://qutaibamustafa.eastus.cloudapp.azure.com/CurrencyExchange.asmx?op=ExchangeCurrency
+Get weather: http://qutaibamustafa.eastus.cloudapp.azure.com/GetWeather.asmx?op=GetWeatherByCity
+
+also in the above links you can find the XML format and WSDL file, SOAP 1.1 and SOAP 1.2 envelops. 
+
+
+For Rest APIs: 
+You can use the below links ( helper ) to check the documntaion for the rest APIs in any format you need XML schema .. ect
+
